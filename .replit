@@ -48,3 +48,7 @@ author = "agent"
 task = "shell.exec"
 args = "npx vite --config vite.config.js --host 0.0.0.0 --port 5000"
 waitForPort = 5000
+
+[[ports]]
+localPort = 5000
+externalPort = 80
