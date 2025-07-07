@@ -1,0 +1,50 @@
+modules = ["nodejs-20"]
+
+[nix]
+channel = "stable-24_05"
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Vue Audio App"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Build Vue App"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Vue Dev Server"
+
+[[workflows.workflow]]
+name = "Vue Audio App"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm install && npm run dev -- --host 0.0.0.0 --port 5000"
+waitForPort = 5000
+
+[[workflows.workflow]]
+name = "Build Vue App"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npx vite build"
+
+[[workflows.workflow]]
+name = "Vue Dev Server"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npx vite --config vite.config.js --host 0.0.0.0 --port 5000"
+waitForPort = 5000
