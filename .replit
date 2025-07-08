@@ -31,6 +31,10 @@ args = "Rebuild App"
 task = "workflow.run"
 args = "Dev Server"
 
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Final Build"
+
 [[workflows.workflow]]
 name = "Vue Audio App"
 author = "agent"
@@ -73,6 +77,14 @@ author = "agent"
 task = "shell.exec"
 args = "npx vite --config vite.config.js --host 0.0.0.0 --port 5000"
 waitForPort = 5000
+
+[[workflows.workflow]]
+name = "Final Build"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npx vite build --config vite.config.js"
 
 [[ports]]
 localPort = 5000

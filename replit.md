@@ -104,7 +104,9 @@ The Audio Button Creator is a Vue 3 application built with TypeScript and Vite t
 ## Changelog
 - July 07, 2025: Initial setup
 - July 07, 2025: Fixed relative asset paths for subdirectory deployment (base: './' in Vite config)
+- January 08, 2025: Added comprehensive documentation (README.md), MIT license, and enhanced HTML meta tags with author and copyright information for Adam Gąsowski
 
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Author: Adam Gąsowski - all rights reserved
